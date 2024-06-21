@@ -5,10 +5,8 @@ class MusicManager:
     def __init__(self):
         self.current_path = os.path.dirname(os.path.abspath(__file__))
         self.music_path = os.path.join(self.current_path, 'Music')
-        self.song_library = []
+        self.song_library = fc.SongLibrary()
         self.playlist = fc.DoublyLinkedList()
-        self.num = 0
-        self.lb = fc.SongLibrary()
         self.add_song()
 
     def get_folder_path(self, name):
@@ -24,9 +22,7 @@ class MusicManager:
             name, artist = self.get_name(ID)
             path = self.get_path_music(ID)
             Song = fc.Song(ID, name, artist,path)
-            self.lb.add_song(Song)
-        
-
+            self.song_library.add_song(Song)
 
     def get_name(self, id):
         artist = {
@@ -60,7 +56,7 @@ class MusicManager:
     
 
     def get_library(self):
-        return self.lb
+        return self.song_library
     def get_playlist(self):
         return self.playlist
     
