@@ -8,8 +8,7 @@ import pygame
 import time
 import os
 import Function as fc
-import Main as m
-
+import Draft_Manager as m
 
 
 # Initialize pygame mixer
@@ -62,6 +61,8 @@ def add_selected_song(lbox1, lbox2):
         print("No song selected.")
 
 def play_selected_song():
+    current_position = 0 # tranh truong hop xoa nhac xong add vao ko chay lai tu dau
+
     m.pl.display_current_song(crrt_song)
     full_path = m.pl.current_song()
     pygame.mixer.music.load(full_path) # Load the selected song
@@ -102,7 +103,6 @@ def play_music():
             pygame.mixer.music.unpause()
             paused = True
                
-    
 def stop_music():
     global paused
     # Stop the currently playing music and reset the progress bar
@@ -153,14 +153,6 @@ def delete_song(lbox1, lbox2):
             first = True 
             paused = False
 
-
-        
-
-    
-
-
-
-
 # Create the main window
 window = tk.Tk()
 window.title("Music Player App - Nguyen Hong Son - ITDSIU21117")
@@ -170,16 +162,13 @@ window.geometry("700x550")
 l_music_player = tk.Label(window, text="Music Player", font=("TkDefaultFont", 30, "bold"))
 l_music_player.pack(pady=1)
 
-#
-
-#
+#Create the search box to search titles or artist names
 search_box = ctk.CTkEntry(window, placeholder_text="Search Song or Artist",  width=350,
                          font=("TkDefaultFont", 18))
 search_box.pack(pady=10)
 
 # Bind the `on_search_box_change` function to the `<KeyRelease>` event
 search_box.bind("<KeyRelease>", on_search_box_change)
-
 
 # Create a frame of listbox
 lbox_frame = tk.Frame(window)
@@ -192,7 +181,6 @@ lbox_frame1.pack(padx = 5, side = tk.LEFT, pady=20)
 # Create a frame of listbox11
 lbox_frame11 = tk.Frame(lbox_frame1)
 lbox_frame11.pack(padx = 5, side = tk.LEFT, pady=20)
-
 
 # Create a frame of listbox2
 lbox_frame2 = tk.Frame(lbox_frame)
@@ -216,7 +204,6 @@ btn_delete = ctk.CTkButton(lbox_frame1, text="Delete",  width=5, command= lambda
                          font=("TkDefaultFont", 18))
 btn_delete.pack(side=tk.LEFT, padx=5)
 
-
 # Create a frame to hold the control buttons
 btn_frame = tk.Frame(window)
 btn_frame.pack(pady=20)
@@ -236,27 +223,17 @@ btn_next = ctk.CTkButton(btn_frame, text=">",  width=50, command= next_song,
                          font=("TkDefaultFont", 25))
 btn_next.pack(side=tk.LEFT, padx=5)
 
-
-
 crrt_song = tk.Listbox(window,width= 33, height=1, font=("TkDefaultFont", 12, "bold"))
 crrt_song.pack(pady=1)
-
 
 # Create a progress bar to indicate the current song's progress
 pbar = Progressbar(window, length=300, mode="determinate")
 pbar.pack(pady=10)
 pbar["value"] = None
 
-
-
-    
 def update_lbox21():
     get_search_value()
-
-
-
 window.after(250, update_lbox21)
-
 window.mainloop()
 
 

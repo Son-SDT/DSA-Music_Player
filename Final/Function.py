@@ -74,9 +74,7 @@ class DoublyLinkedList:
         self.current = None
         self.first = None
         self.num = 0
-
-
-    def add_song(self, song,listbox):
+    def add_song(self, song):
         new_node = Node(song)
         if  self.head == None:
             self.head = self.tail = self.current = new_node
@@ -88,8 +86,6 @@ class DoublyLinkedList:
             self.tail = new_node
         self.num +=1        
     def get_current(self):
-        
-
         return self.current.song
     
     def current_song(self):
@@ -107,34 +103,25 @@ class DoublyLinkedList:
             else :
                 if self.current.prev:
                     self.current.prev.next = self.current.next
-                    print("prev")
-                    pass
 
                 else :
                     self.head = self.current.next
                     self.current = self.head
-                    print("head")
                     self.num -= 1
                     pygame.mixer.music.stop()
                     listbox.delete(0, 0)
                     return None
-                    pass
                 if self.current.next:
                     self.current.next.prev = self.current.prev
-                    print("next")
-                    pass
 
                 else :
                     self.tail = self.current.prev
                     self.current = self.tail
-                    print("tail")
                     
-                    pass
                 
                 if self.current != self.tail:
                     self.current = self.current.next
                 
-                print("2")
                 
             self.num -= 1
             pygame.mixer.music.stop()
@@ -158,17 +145,11 @@ class DoublyLinkedList:
     
     def check_head(self):
         if self.first :
-            print("First")
             return True
         else : 
-            print("not First")
-
             if self.current == self.head  :
-                print("head")
-                
                 return True
             else :
-                print("not head")
                 return False
             
     def check_tail(self):

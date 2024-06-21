@@ -1,6 +1,5 @@
 import Function as fc
 import os
-
 current_path = os.path.dirname(os.path.abspath(__file__))
 def get_FolderPath(name):
     return os.path.join(current_path,name)
@@ -47,4 +46,3 @@ lb.add_song(s9)
 
 
 pl = fc.DoublyLinkedList()
-#lb.display()
