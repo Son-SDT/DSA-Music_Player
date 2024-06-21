@@ -19,12 +19,12 @@ class MusicManager:
         list_song = os.listdir(self.music_path)
         for i in list_song :
             ID = i.split('.')[0]
-            name, artist = self.get_name(ID)
+            name, artist = self.get_title_artist(ID)
             path = self.get_path_music(ID)
             Song = fc.Song(ID, name, artist,path)
             self.song_library.add_song(Song)
 
-    def get_name(self, id):
+    def get_title_artist(self, id):
         artist = {
             "DKE-VU": "Vũ",
             "NLHBQ-VU": "Vũ",

@@ -22,7 +22,7 @@ class SongLibrary:
         index = self._hash(song.ID)
         for existing_song in self.hash_table[index]:
             if existing_song.ID == song.ID:
-                return  # Song already exists, do not add
+                return None  # Song already exists, do not add
         self.hash_table[index].append(song)
 
     def remove_song(self, ID):
@@ -30,7 +30,7 @@ class SongLibrary:
         for i, song in enumerate(self.hash_table[index]):
             if song.ID == ID:
                 del self.hash_table[index][i]
-                return
+                
 
     def find_song(self, title, listbox):
         for bucket in self.hash_table:
@@ -171,9 +171,6 @@ class DoublyLinkedList:
             self.current = self.current.prev
             return self.current.song
         return None
-
-    def start_playback(self):
-        self.current.next = self.current
         
 
     def display_current_song(self, listbox):
