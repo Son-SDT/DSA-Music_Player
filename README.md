@@ -1,5 +1,5 @@
 # DSA Music Player
-
+# Nguyen Hong Son - ITDSIU21117
 ## Overview
 This project is a music player application developed as part of the "Algorithms and Data Structures" course at Vietnam National University – HCM, International University, School of Computer Science and Engineering, Semester 2, 2023 - 2024.
 
