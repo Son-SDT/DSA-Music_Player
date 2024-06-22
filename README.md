@@ -64,6 +64,8 @@ To add a new song to the library:
 The user interface is designed to be basic yet functional, allowing users to manage and play their music easily.
 
 ![Application UI](figures/II.B.1.png)
+![UML Diagram](figures/DSA-UML.png)
+
 
 ### Others
 The project includes a UML diagram to outline the structure and interactions within the application.
@@ -148,7 +150,7 @@ The playlist manager supports operations such as adding, removing, and navigatin
 1. Implement a library feature to store multiple songs in a sequence.
 2. Implement a playlist feature to store and play multiple songs in a 
 sequence.
-3. Implement a progress bar to indicate the current song's progress in realtime.
+3. Implement a progress bar to indicate the current song's progress in real-time.
 4. Implement a feature to handle the end of a song and automatically play 
 the next song in the playlist.
 5. Implement a feature to pause, play, and skip songs.
@@ -196,7 +198,7 @@ https://customtkinter.tomschimansky.com/
 https://www.geeksforgeeks.org/doubly-linked-list-in-python/
 3. GeeksforGeeks. (n.d.). Implementation of Hash Table in Python using Separate 
 Chaining. Retrieved June 22, 2024, from
-https://www.geeksforgeeks.org/implementation-of-hash-table-in-python-usingseparate-chaining/
+https://www.geeksforgeeks.org/implementation-of-hash-table-in-python-using-separate-chaining/
 4. Psikka. (n.d.). GitHub - psikka/projects-yt: MusicPlayer. GitHub. Retrieved June 22, 
 2024, from https://github.com/achudnova/projects-yt/tree/main/MusicPlayer
 5. Psikka. (n.d.). YouTube - Psikka: ChatGPT Implementation. Retrieved June 22, 2024, 
