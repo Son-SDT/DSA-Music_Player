@@ -85,38 +85,38 @@ The hash table is used in the `SongLibrary` class to efficiently manage songs by
 
 ### Doubly Linked List
 The playlist manager supports operations such as adding, removing, and navigating through songs. The `DoublyLinkedList` allows for efficient forward and backward traversal of the playlist, making it suitable for music player applications.
-## Implementation Details
+### Implementation Details
 
-### Hash Method
+#### Hash Method
 - **Purpose**: Generates a hash value for a song ID, mapping it to an index within the hash table.
 - **Time Complexity**: O(1).
 
-### Add Song Method
+#### Add Song Method
 - **Purpose**: Adds a new song to the hash table.
 - **Average Case Time Complexity**: O(1).
 - **Worst Case Time Complexity**: O(n).
 
-### Remove Song Method
+#### Remove Song Method
 - **Purpose**: Removes a song from the hash table by ID.
 - **Average Case Time Complexity**: O(1).
 - **Worst Case Time Complexity**: O(n).
 
-### Find Song Method
+#### Find Song Method
 - **Purpose**: Finds songs matching a title or artist and displays results.
 - **Average Case Time Complexity**: O(m + k).
 - **Worst Case Time Complexity**: O(m * n + k).
 
-### Get Song Method
+#### Get Song Method
 - **Purpose**: Finds and returns a song matching a title or artist.
 - **Average Case Time Complexity**: O(m + k).
 - **Worst Case Time Complexity**: O(m * n + k).
 
-### Display Songs in Listbox Method
+#### Display Songs in Listbox Method
 - **Purpose**: Populates a Tkinter Listbox widget with song titles and artists.
 - **Average Case Time Complexity**: O(n + m + log(k)).
 - **Worst Case Time Complexity**: O(n * m + log(k)).
 
-### Display Empty Listbox Method
+#### Display Empty Listbox Method
 - **Purpose**: Displays an empty Listbox widget.
 - **Time Complexity**: O(n + log(k)).
 
