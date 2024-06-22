@@ -84,22 +84,100 @@ The hash table is used in the `SongLibrary` class to efficiently manage songs by
 - **Display Empty Listbox Method**: Displays an empty Listbox widget. Time complexity: O(n + log(k)).
 
 ### Doubly Linked List
-(Section details truncated; please refer to the project report for complete information)
+The playlist manager supports operations such as adding, removing, and navigating through songs. The `DoublyLinkedList` allows for efficient forward and backward traversal of the playlist, making it suitable for music player applications.
+## Implementation Details
+
+### Hash Method
+- **Purpose**: Generates a hash value for a song ID, mapping it to an index within the hash table.
+- **Time Complexity**: O(1).
+
+### Add Song Method
+- **Purpose**: Adds a new song to the hash table.
+- **Average Case Time Complexity**: O(1).
+- **Worst Case Time Complexity**: O(n).
+
+### Remove Song Method
+- **Purpose**: Removes a song from the hash table by ID.
+- **Average Case Time Complexity**: O(1).
+- **Worst Case Time Complexity**: O(n).
+
+### Find Song Method
+- **Purpose**: Finds songs matching a title or artist and displays results.
+- **Average Case Time Complexity**: O(m + k).
+- **Worst Case Time Complexity**: O(m * n + k).
+
+### Get Song Method
+- **Purpose**: Finds and returns a song matching a title or artist.
+- **Average Case Time Complexity**: O(m + k).
+- **Worst Case Time Complexity**: O(m * n + k).
+
+### Display Songs in Listbox Method
+- **Purpose**: Populates a Tkinter Listbox widget with song titles and artists.
+- **Average Case Time Complexity**: O(n + m + log(k)).
+- **Worst Case Time Complexity**: O(n * m + log(k)).
+
+### Display Empty Listbox Method
+- **Purpose**: Displays an empty Listbox widget.
+- **Time Complexity**: O(n + log(k)).
 
 ## Conclusion
 ### Achieved Goals
-- Successfully developed a functional music player with a user-friendly interface.
-- Efficiently managed songs using hash tables and other data structures.
+1. Implement a library feature to store multiple songs in a sequence.
+2. Implement a playlist feature to store and play multiple songs in a 
+sequence.
+3. Implement a progress bar to indicate the current song's progress in realtime.
+4. Implement a feature to handle the end of a song and automatically play 
+the next song in the playlist.
+5. Implement a feature to pause, play, and skip songs.
+6. Implement a feature to add and delete songs from the playlist or library.
+7. Implement a feature to display the current song's information, the 
+playlist, the song library.
+8. Implement a search feature to search for songs or artists by name.
+9. Implement a feature to display and update the search results real-time.
 
 ### Limitations
-- Some features could be further optimized for performance.
+1. The application does not include any user authentication or authorization 
+mechanisms.
+2. The application does not include any support for playing songs from 
+different formats or streaming songs from online sources.
+3. The application does not include any support for managing playlists or 
+saving the current playlist to a file.
+4. The application does not include any support for managing user 
+preferences or settings.
+5. The application does not include any support for managing song 
+metadata, such as album art or song lyrics.
+6. The application does not include any support for managing song ratings 
+or reviews.
+7. The application does not include any support for managing song genres 
+or categories.
+8. The application does not include any support for managing song playlists 
+or creating playlists based on user preferences or song attributes.
+9. The application does not include any support for managing song 
+recommendations or suggesting similar songs based on user preferences 
+or song attributes.
 
 ### Future Enhancements
-- Integrating advanced features like audio processing and machine learning for personalized recommendations.
+1. Implement a feature to shuffle the playlist
+2. Implement a feature to repeat a single song
+3. Implement a feature to display song lyrics
+4. Implement a feature to display album artwork
+5. Implement a feature to display song ratings and reviews
+6. Implement a feature to display song recommendations based on the user's 
+   listening habits or preferences and user listening history.
+
 
 ## References
-For a detailed list of references, please refer to the project report.
-
+1. Custom Tkinter Widgets. (n.d.). Retrieved June 22, 2024, from 
+https://customtkinter.tomschimansky.com/
+2. GeeksforGeeks. (n.d.). Doubly Linked List in Python. Retrieved June 22, 2024, from 
+https://www.geeksforgeeks.org/doubly-linked-list-in-python/
+3. GeeksforGeeks. (n.d.). Implementation of Hash Table in Python using Separate 
+Chaining. Retrieved June 22, 2024, from
+https://www.geeksforgeeks.org/implementation-of-hash-table-in-python-usingseparate-chaining/
+4. Psikka. (n.d.). GitHub - psikka/projects-yt: MusicPlayer. GitHub. Retrieved June 22, 
+2024, from https://github.com/achudnova/projects-yt/tree/main/MusicPlayer
+5. Psikka. (n.d.). YouTube - Psikka: ChatGPT Implementation. Retrieved June 22, 2024, 
+from https://www.youtube.com/watch?v=RqNgCgu5Vw8
 ## Repository
 [GitHub Repository](https://github.com/Son-SDT/DSA-Music_Player)
 
