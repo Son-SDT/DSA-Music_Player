@@ -64,8 +64,19 @@ To add a new song to the library:
 The user interface is designed to be basic yet functional, allowing users to manage and play their music easily.
 
 ![Application UI](figures/II.B.1.png)
+### UML Diagram
+- The Unified Modeling Language (UML) is a widely used visual modeling notation that helps in designing, documenting, and visualizing software systems. In the context of the DSA Music Player project, the UML diagram provides a comprehensive overview of the structure and interactions within the application.
+- The UML diagram for the DSA Music Player application is shown below:
+
 ![UML Diagram](figures/DSA-UML.png)
 
+- Here is a brief introduction to the UML (Unified Modeling Language) diagram for the music player application and the relationship between the classes in the code snippet can be described as follows::
+1. The MusicPlayerApp class is the main class that initializes the GUI components, manages the music library, and handles user interactions. It uses the MusicManager class to manage the playlist and song library.
+2. The MusicManager class manages the music library and playlist. It uses the SongLibrary class to store and retrieve songs, and the DoublyLinkedList class to implement the playlist.
+3. The SongLibrary class uses a hash table (implemented using the HashTable class) to efficiently manage songs by their ID. It provides methods to add, remove, and search for songs.
+4. The DoublyLinkedList class implements a doubly linked list to store and manage the playlist. It allows for efficient addition, deletion, and traversal of songs.
+5. The Song class represents a song with attributes such as ID, name, artist, and path. It is used to store and retrieve song information in the SongLibrary and DoublyLinkedList.
+6. The HashTable class implements a hash table to efficiently store and retrieve songs by their ID. It uses the hash method to generate a hash value for a song ID, and the get_index method to map the hash value to an index within the hash table.
 
 ### Others
 The project includes a UML diagram to outline the structure and interactions within the application.
