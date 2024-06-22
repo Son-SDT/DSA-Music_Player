@@ -47,11 +47,6 @@ class SongLibrary:
                     return song
         return None
 
-    def display(self):
-        for bucket in self.hash_table:
-            for song in bucket:
-                print(f"Title: {song.title}, Artist: {song.artist}, File Path: {song.filepath}")
-
     def display_songs_in_listbox(self, listbox):
         listbox.delete(0, tk.END)
         for bucket in self.hash_table:
