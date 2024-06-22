@@ -126,10 +126,12 @@ class MusicPlayerApp:
                 if self.pbar["maximum"] - self.current_position < 0.1:
                     self.stop_music()  # Stop the music playback
                     self.pbar["value"] = 0  # Reset the pbar
-                    for _ in range(1):
-                        time.sleep(1.5)
-                        self.pl.play_next()
-                        self.play_music()
+                    
+                    time.sleep(1.5)
+                    self.pl.play_next()
+                    self.first = True
+                    self.paused = False
+                    self.play_music()
                 self.root.update()
             time.sleep(0.1)
 
