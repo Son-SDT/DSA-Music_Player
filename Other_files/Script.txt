@@ -1,0 +1,266 @@
+	slide 1
+
+Good morning Mr Thai Trung Tin
+My full name is Nguyen Hong Son
+Today, I will present to you about my project of 
+Data structure and algorithm course. This product is
+a music player application
+
+	slide 2
+
+Now, let me show you the table of content im this project.
+Fristly, I will introduce to you about the project and product
+
+then, the User Interface will be illustrated to you and I also 
+explain about the function on the user screen.
+
+After that, I will talk about the Data structure and algorithm
+which I use in this project. Hash table and Doubly linked list
+
+Next I will show you about the Design pattern 
+
+Finally, the conclusion will be given to you and reach the end of my performance
+
+	Slide 3
+
+Ok now, let's have a look at the first part. the overview
+
+	Slide 4
+The Music Player App is a desktop application developed using Python and 
+the Tkinter library.
+
+It allows users to play, pause, and navigate Through their music library, 
+as well as create and manage playlists.
+
+The app features a user-friendly interface with search functionality, 
+allowing users to easily find and add songs to their playlists.
+
+	Slide 5
+Now let's I show you the UML diagram 
+
+You can see right here, 
+SongLibrary uses a Song object to store and manage songs.
+
+DoublyLinkedList uses Node objects to create a doubly linked list of songs.
+
+MusicManager uses Song objects and the DoublyLinkedList 
+to manage the music files and their metadata.
+
+MusicPlayerApp uses Song objects, SongLibrary, and DoublyLinkedList to 
+create and manage the user interface and control the music playback.
+
+	Slide 6
+Next, we will go to the part 2, Friendly User Interface
+
+	Slide 7
+Now you can see on the sceen, this is the UI of my application
+
+I will show you the demo of it, this is the gif, that's why i you cannot hear
+any sound at this time.
+
+The add function is used to add song from the library- hash table 
+into the playlist - Doubly linked list
+
+After add the song into playlist, the play function will allow us to
+play or pause the current song
+
+If you want to change the song, just click on the next and previous function 
+right here, after changing to the new song, it will be played automatically
+
+Now you can see the current song title in the box here, then look at the bar 
+below, this is a process bar which show the process of the song.
+If the value in this bar is full, the current song will be changed to the
+next one and it will be played automatically
+
+I have already talked to you about the add function, but how about the 
+delete function ? It will delete the selected song in the playplist 
+or library
+
+
+Finally, this is the search box, where you can type artist or title of
+the song to search, and the results will be shown below it, in the library 
+box 
+
+	Slide 8
+Now let's move on the Data Structure and Algorithm
+
+	Slide 9
+Frist, I will talk to you about the hash table
+	Slide 10
+The hash table data structure will be used for song library
+because Hash tables provide constant-time complexity for 
+search, insert, and delete operations.
+
+And the SongLibrary class is a simple implementation of
+ a hash table using separate chaining to handle collisions.
+
+You can see the code right here, Separate chaining is a method used to 
+resolve collisions in hash tables. When two or more elements are hashed to
+the same index in the hash table, separate chaining involves storing these 
+elements in a linked list or another data structure at that index.
+
+	Slide 11
+okey, let talk about the insert method of hash table
+
+
+The add_song method in the SongLibrary class is responsible for 
+adding a new song to the hash table.
+
+In the average case, where collisions are well-distributed, 
+the method runs in constant time.
+Average case: O(1) + O(1) + O(1) + O(1) = O(1)
+
+In the worst case, where all songs hash to the same index, 
+the method’s time complexity is linear with respect to the number of 
+songs at that index.
+Worst case: O(1) + O(n) + O(1) + O(1) = O(n)
+
+	Slide 12
+
+Now I will move to the delete method
+The remove_song method in the SongLibrary class is responsible for 
+removing a song from the hash table, given its ID.
+
+In the average case, where collisions are well-distributed and the song to 
+be removed is near the end of the list, the method runs in constant time.
+Average case: O(1) + O(1) + O(1) = O(1)
+
+In the worst case, where all songs hash to the same index and the song to 
+be removed is at the beginning of the list, the method's time complexity 
+is linear with respect to the number of songs at that index.
+Worst case: O(1) + O(n) + O(n) = O(n)
+
+	Slide 13
+
+the final method is search
+
+The find_song method in the SongLibrary class is responsible for finding 
+songs that match a given title (or artist) and displaying the results 
+in a listbox.
+
+In the average case, the method's time complexity is linear with respect to 
+the size of the hash table and the length of the search term.
+Average case: O(m) + O(1) + O(k) + O(1) = O(m + k)
+
+In the worst case, where all songs hash to the same index, the method's time
+ complexity is linear with respect to the size of the hash table, the number
+ of songs at each index, and the length of the search term.
+Worst case: O(m) + O(n) + O(k) + O(1) = O(m * n + k)
+
+	Slide 14
+
+Okey, let's move on, Doubly linked list
+
+	Slide 15
+
+I design the Doubly linked list to use for song playlist.
+because it Easy to traverse the playlist in both forward and
+ backward directions.
+In a doubly linked list, adding or removing elements from the beginning 
+or end of the list takes constant time (O(1)).
+
+	Slide 16
+
+next,
+The add_song method in the DoublyLinkedList class is responsible for adding 
+a new song to the linked list data structure that stores the songs.
+The overall time complexity of the add_song method is O(1), 
+as it involves a constant number of operations, regardless of the 
+size of the linked list.
+
+	Slide 17
+
+Now, let talk about the remove method
+The remove_song method in the DoublyLinkedList class is responsible for 
+removing a specific song from the library or the playlist.
+
+The method efficiently handles the case where the current song is being 
+removed, with a time complexity of O(1) for that scenario. However, 
+the linear search through the doubly-linked list for non-current songs 
+contributes to the overall O(n) time complexity of the method.
+	
+	Skip slide 18
+	Slide 19
+
+Finally, this is play next and previous method,
+The play_next and play_previous methods in the DoublyLinkedList class 
+are responsible for moving the self.current pointer to the next or 
+previous song in the playlist, and returning the corresponding song object.
+
+The overall time complexity of both  
+methods is O(1), as they involve a constant number of operations. 
+This is because the methods perform a constant number of pointer updates 
+and do not need to traverse the entire list.
+
+	Slide 20
+
+Now, move on the Design pattern
+
+	Slide 21
+
+I use Singleton for the design pattern
+because singleton provide a toolbox of proven solutions that can help 
+developers create more maintainable, flexible, and efficient software systems.
+
+In the __new__ method, the Singleton Pattern is implemented by checking 
+if an instance of the class already exists (cls._instance). 
+If an instance exists, the existing instance is returned. 
+If no instance exists, a new instance is created using 
+the super().__new__(cls) method.
+
+We can ensure that only one instance of the music player application 
+is created, which helps maintain consistency and prevents multiple 
+instances from being created.
+
+	Slide 22
+
+That's bring me to the end of my perfomance, 
+before that, I will give you some conclusion
+
+Firstly, let's talk about achievements
+The development of the music player application in Python successfully met
+several key objectives:
+1. Implement a library feature to store multiple songs in a sequence.
+2. Implement a playlist feature to store and play multiple songs in a
+sequence.
+3. Implement a feature to handle the end of a song and automatically play
+the next song in the playlist.
+4. Implement a feature to add and delete songs from the playlist or library.
+5. Implement a search feature to search for songs or artists by name.
+6. Implement a feature to display and update the search results real-time.
+
+Secondly, is about the limitation
+The application is well-structured and follows best practices, making it easy to
+understand and maintain. However, there are some limitations to the current
+version of the music player:
+
+1. The application does not include any user authentication or authorization
+mechanisms.
+2. The application does not include any support for playing songs from
+different formats or streaming songs from online sources
+3. The application does not include any support for managing playlists or
+saving the current playlist to a file.
+and others limitations
+
+Finally, about the Future Enhancements
+
+To further improve the music player application, the following 
+enhancements are recommended:
+
+1. Implement a feature to shuffle the playlist
+2. Implement a feature to repeat a single song
+3. Implement a feature to display song lyrics
+
+	Slide 23
+this is the end of my presentation, Thank youu for your listening
+If you have any question, please let me know through my email
+or blackboard
+
+	Slide 24
+here is my references
+
+
+
+
+
+
